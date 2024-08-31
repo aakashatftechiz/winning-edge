@@ -1,0 +1,25 @@
+
+plugins {
+    id 'com.android.application' version '8.5.0' apply false
+    id 'com.android.library' version '8.5.0' apply false
+    id "com.google.gms.google-services" version "4.3.13" apply false
+    id 'com.google.firebase.crashlytics' version '2.9.1' apply false
+
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io" }
+        maven {
+            url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
+        }
+    }
+}
+ext {
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

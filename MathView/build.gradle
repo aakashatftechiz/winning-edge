@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+version = '0.0.6'
+
+android {
+    namespace "io.github.kexanie.library"
+    compileSdk 34
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation files('libs/chunk-templates-3.0.1.jar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+}
+
+group = 'io.github.kexanie.library'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
