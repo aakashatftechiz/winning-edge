@@ -2,7 +2,7 @@
 <resources>
 
 
-    <string name="app_name" translatable="false">E Academy</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Savik Academy</string>        <!--change app name here-->
 
 
     <string name="welcome">आपका स्वागत है</string>

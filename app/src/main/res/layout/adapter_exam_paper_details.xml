@@ -57,7 +57,7 @@
     </LinearLayout>
 
 
-    <com.pixelnx.eacademy.utils.widgets.CustomTextNormalBold
+    <com.ftechiz.savikacademy.utils.widgets.CustomTextNormalBold
         android:id="@+id/tvTimeUsed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,14 +73,14 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:orientation="vertical">
 
-      <!--  <io.github.kexanie.library.MathView
+      <io.github.kexanie.library.MathView
             android:id="@+id/tvYourAns"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_2sdp"
             android:minHeight="@dimen/_10sdp"
             auto:engine="MathJax"
-            auto:text=""/>-->
+            auto:text=""/>
 
 
     </LinearLayout>
@@ -102,7 +102,7 @@
                 android:layout_marginStart="10dp"
                 android:src="@drawable/rightans_icon" />
 
-            <com.pixelnx.eacademy.utils.widgets.CustomSmallText
+            <com.ftechiz.savikacademy.utils.widgets.CustomSmallText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -111,15 +111,14 @@
 
         </LinearLayout>
 
-   <!--     <io.github.kexanie.library.MathView
+    <io.github.kexanie.library.MathView
             android:id="@+id/tvCorrectAnswer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/_5sdp"
             android:minHeight="@dimen/_10sdp"
             auto:engine="MathJax"
-            auto:text=""/>-->
-
+            auto:text=""/>
 
     </LinearLayout>
 

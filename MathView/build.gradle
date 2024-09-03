@@ -11,6 +11,8 @@ android {
         targetSdkVersion 34
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -21,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation files('libs/chunk-templates-3.0.1.jar')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
 }
 

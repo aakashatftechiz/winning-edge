@@ -27,22 +27,25 @@ public class MathView extends WebView {
 
         TypedArray mTypeArray = context.getTheme().obtainStyledAttributes(
                 attrs,
-                R.styleable.MathView,
+                io.github.kexanie.library.R.styleable.MathView,
                 0, 0
         );
 
         try { // the order of execution of setEngine() and setText() matters
-            setEngine(mTypeArray.getInteger(R.styleable.MathView_engine, 0));
-            setText(mTypeArray.getString(R.styleable.MathView_text));
+            setEngine(mTypeArray.getInteger(io.github.kexanie.library.R.styleable.MathView_engine, 0));
+            setText(mTypeArray.getString(io.github.kexanie.library.R.styleable.MathView_text));
         } finally {
             mTypeArray.recycle();
         }
     }
 
-    // disable touch event on MathView
+
+
+    // to disable touch event on MathView
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        return false;
+        //  requestDisallowInterceptTouchEvent(true);
+        return super.onTouchEvent(event);
     }
 
     private Chunk getChunk() {
@@ -51,8 +54,8 @@ public class MathView extends WebView {
         String template = TEMPLATE_KATEX;
         AndroidTemplates loader = new AndroidTemplates(getContext());
         switch (mEngine) {
-            case Engine.KATEX: template = TEMPLATE_KATEX; break;
-            case Engine.MATHJAX: template = TEMPLATE_MATHJAX; break;
+            case io.github.kexanie.library.MathView.Engine.KATEX: template = TEMPLATE_KATEX; break;
+            case io.github.kexanie.library.MathView.Engine.MATHJAX: template = TEMPLATE_MATHJAX; break;
         }
 
         return new Theme(loader).makeChunk(template);
@@ -85,10 +88,10 @@ public class MathView extends WebView {
      *
      * This method should be call BEFORE setText() and AFTER setEngine().
      * PLEASE PAY ATTENTION THAT THIS METHOD IS FOR MATHJAX ONLY.
-     * @param config 
+     * @param config
      */
     public void config(String config) {
-        if (mEngine == Engine.MATHJAX) {
+        if (mEngine == io.github.kexanie.library.MathView.Engine.MATHJAX) {
             this.mConfig = config;
         }
     }
@@ -101,19 +104,19 @@ public class MathView extends WebView {
      */
     public void setEngine(int engine) {
         switch (engine) {
-            case Engine.KATEX: {
-                mEngine = Engine.KATEX;
+            case io.github.kexanie.library.MathView.Engine.KATEX: {
+                mEngine = io.github.kexanie.library.MathView.Engine.KATEX;
                 break;
             }
-            case Engine.MATHJAX: {
-                mEngine = Engine.MATHJAX;
+            case io.github.kexanie.library.MathView.Engine.MATHJAX: {
+                mEngine = io.github.kexanie.library.MathView.Engine.MATHJAX;
                 break;
             }
-            default: mEngine = Engine.KATEX;
+            default: mEngine = io.github.kexanie.library.MathView.Engine.KATEX;
         }
     }
 
-    public static class Engine {
+    public  class Engine {
         final public static int KATEX = 0;
         final public static int MATHJAX = 1;
     }

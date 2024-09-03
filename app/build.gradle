@@ -9,11 +9,11 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.pixelnx.eacademy"
+        applicationId "com.ftechiz.savikacademy"
         minSdk 23
         targetSdk 34
-        versionCode 17
-        versionName "1.0.17"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,7 +35,7 @@ android {
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
     }
-    namespace 'com.pixelnx.eacademy'
+    namespace 'com.ftechiz.savikacademy'
     rootProject.ext.ffmpegKitPackage = "video"
 }
 apply plugin: 'com.android.application'
@@ -49,6 +49,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':horizontalcalendar')
+    implementation project(':MathView')
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.github.amitshekhariitbhu.Fast-Android-Networking:android-networking:1.0.4'
@@ -73,14 +74,44 @@ dependencies {
     implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0'
     implementation 'com.razorpay:checkout:1.6.19'
     implementation 'com.google.firebase:firebase-crashlytics:17.2.2'
-    implementation 'io.github.kexanie.library:MathView:0.0.6'
+//    implementation 'io.github.kexanie.library:MathView:0.0.6'
     implementation 'com.google.android.exoplayer:exoplayer-core:2.14.0'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
-    implementation 'com.google.android.play:core:1.10.0'
+//    implementation 'com.google.android.play:core:1.10.0'
+    // This dependency is downloaded from the Google’s Maven repository.
+
+//    Integrate the Play Asset Delivery Library
+    // So, make sure you also include that repository in your project's build.gradle file.
+    implementation 'com.google.android.play:asset-delivery:2.2.2'
+
+    // For Kotlin users also add the Kotlin extensions library for Play Asset Delivery:
+    implementation 'com.google.android.play:asset-delivery-ktx:2.2.2'
+
+//    Integrate the Play Feature Delivery Library
+    implementation 'com.google.android.play:feature-delivery:2.1.0'
+
+    // For Kotlin users, also add the Kotlin extensions library for Play Feature Delivery:
+    implementation 'com.google.android.play:feature-delivery-ktx:2.1.0'
+
+//    Integrate the Play In-App Review Library
+
+    // Make sure you also include that repository in your project's build.gradle file.
+    implementation 'com.google.android.play:review:2.0.1'
+
+    // For Kotlin users, also add the Kotlin extensions library for Play In-App Review:
+    implementation 'com.google.android.play:review-ktx:2.0.1'
+
+//    Integrate the Play In-App Update Library
+    implementation 'com.google.android.play:app-update:2.1.0'
+
+    // For Kotlin users, also add the Kotlin extensions library for Play In-App Update:
+    implementation 'com.google.android.play:app-update-ktx:2.1.0'
+
     implementation ('org.jitsi.react:jitsi-meet-sdk:5.1.0') { transitive = true }
     implementation 'com.github.bumptech.glide:glide:4.8.0'
+    testImplementation 'junit:junit:4.12'
 
     //  implementation fileTree(include: ['*.jar'], dir: 'libs')
 }
