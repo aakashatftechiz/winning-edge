@@ -1,7 +1,7 @@
 <resources>
 
 
-    <string name="app_name" translatable="false">Savik Academy</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Inspiration Study Circle</string>        <!--change app name here-->
 
     <string name="show">show</string>
     <string name="not_assign">Not assign yet</string>
@@ -102,6 +102,7 @@
     <string name="ok">OK</string>
     <string name="select_now">Select Now</string>
     <string name="Library">Library</string>
+    <string name="Book_and_current_affairs" translatable="false">Books and Current Affairs</string>
     <string name="old_papers">Old Papers</string>
     <string name="Notes">Notes</string>
     <string name="Books">Books</string>
@@ -288,6 +289,8 @@ Once you cancel, Your test is submitted automatically.</string>
 
     <string name="exam_instructions">2. All questions are compulsory.\n3. Please read questions carefully each questions has separate marking.\n
         4. During exam you can not take screenshot.\n5. Paper will be auto submitted if you are using other application between exam.\n6. Don\'t press back or home button during exam.</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 
 </resources>

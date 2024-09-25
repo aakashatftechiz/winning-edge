@@ -51,7 +51,7 @@
                 android:background="#68000000" />
 
 
-            <com.ftechiz.savikacademy.utils.widgets.CustomEditText
+            <com.ftechiz.isc.utils.widgets.CustomEditText
                 android:id="@+id/etSearch"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

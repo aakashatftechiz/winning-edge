@@ -48,7 +48,7 @@
                 android:padding="2dp"
                 android:orientation="vertical">
 
-                <com.ftechiz.savikacademy.utils.widgets.CustomeTextRegularBold
+                <com.ftechiz.isc.utils.widgets.CustomeTextRegularBold
                     android:id="@+id/tvName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

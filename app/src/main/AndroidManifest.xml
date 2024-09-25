@@ -110,9 +110,9 @@
         <activity
             android:name=".ui.academicrecord.ActivityAcademicRecord"
             android:exported="false" />
-        <activity
+       <!-- <activity
             android:name=".ui.live.ActivityLive"
-            android:exported="false" />
+            android:exported="false" />-->
         <activity
             android:name=".ui.generatepapers.ActivityGetPapers"
             android:configChanges="orientation|screenSize|layoutDirection"
@@ -201,7 +201,7 @@
             android:value="false" />
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.ftechiz.savikacademy.provider"
+            android:authorities="com.ftechiz.isc.provider"
             android:exported="false"
             android:grantUriPermissions="true"
             tools:replace="android:authorities">

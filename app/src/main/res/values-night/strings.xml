@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
+</resources>

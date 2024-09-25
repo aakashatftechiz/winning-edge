@@ -262,6 +262,7 @@
     <string name="Demo">تطبيق تجريبي لا يمكنك تغيير أي شيء</string>
     <string name="select_now">حدد الآن</string>
     <string name="Library">مكتبة</string>
+    <string name="Book_and_current_affairs">Library</string>
     <string name="old_papers">أوراق قديمة</string>
     <string name="Notes">ملاحظات</string>
     <string name="Books">كتب</string>
@@ -288,5 +289,7 @@
     <string name="NegMarks">وضع العلامات السلبية</string>
     <string name="negativemarkinstruct">1. لن يكون هناك سلبية العلامات</string>
     <string name="ThereWillBe">سيكون هنالك</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 </resources>

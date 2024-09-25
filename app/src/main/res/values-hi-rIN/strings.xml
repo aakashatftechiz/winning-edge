@@ -2,7 +2,7 @@
 <resources>
 
 
-    <string name="app_name" translatable="false">Savik Academy</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Inspiration Study Circle</string>        <!--change app name here-->
 
 
     <string name="welcome">आपका स्वागत है</string>
@@ -286,6 +286,8 @@
     <string name="NegMarks">नकारात्मक अंकन</string>
     <string name="negativemarkinstruct">1. कोई नकारात्मक अंकन नहीं होगा</string>
     <string name="ThereWillBe">वहां</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 
 </resources>

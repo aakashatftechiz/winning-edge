@@ -39,7 +39,7 @@
             android:scaleType="fitXY"
             android:src="@drawable/books" />
 
-        <com.ftechiz.savikacademy.utils.widgets.CustomTextSemiBold
+        <com.ftechiz.isc.utils.widgets.CustomTextSemiBold
             android:id="@+id/tvTittle"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_50sdp"
@@ -73,13 +73,13 @@
             android:scaleType="fitXY"
             android:src="@drawable/notetaking" />
 
-        <com.ftechiz.savikacademy.utils.widgets.CustomTextSemiBold
+        <com.ftechiz.isc.utils.widgets.CustomTextSemiBold
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/_6sdp"
             android:layout_below="@+id/notesimg"
             android:layout_centerHorizontal="true"
-            android:text="@string/Notes"
+            android:text="@string/daily_current_affairs"
 
             android:textColor="@color/colorText" />
     </RelativeLayout>
@@ -106,14 +106,14 @@
             android:scaleType="fitXY"
             android:src="@drawable/paper" />
 
-        <com.ftechiz.savikacademy.utils.widgets.CustomTextSemiBold
+        <com.ftechiz.isc.utils.widgets.CustomTextSemiBold
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/_6sdp"
             android:layout_below="@+id/imgPaper"
             android:layout_centerHorizontal="true"
 
-            android:text="@string/old_papers"
+            android:text="@string/monthly_current_affairs"
 
             android:textColor="@color/colorText" />
     </RelativeLayout>

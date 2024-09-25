@@ -285,5 +285,7 @@ Une fois que vous annulez, votre test est soumis automatiquement</string>
     <string name="NegMarks">Marquage négatif</string>
     <string name="negativemarkinstruct">1. Il n\'y aura pas de marquage négatif</string>
     <string name="ThereWillBe">Il y aura</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 </resources>

@@ -30,7 +30,7 @@
                 android:padding="6dp"
                 android:src="@drawable/ic_backarrow" />
 
-            <com.ftechiz.savikacademy.utils.widgets.CustomTextExtraBold
+            <com.ftechiz.isc.utils.widgets.CustomTextExtraBold
                 android:id="@+id/tvHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
 
 
 
-        <com.ftechiz.savikacademy.utils.widgets.CustomTextSemiBold
+        <com.ftechiz.isc.utils.widgets.CustomTextSemiBold
             android:id="@+id/btViewChart"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
@@ -181,7 +181,7 @@
         </HorizontalScrollView>
 
 
-        <com.ftechiz.savikacademy.utils.widgets.CustomTextExtraBold
+        <com.ftechiz.isc.utils.widgets.CustomTextExtraBold
             android:id="@+id/tvAverage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

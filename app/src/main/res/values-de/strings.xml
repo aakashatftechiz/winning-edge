@@ -2,7 +2,7 @@
 <resources>
 //germani
 
-    <string name="app_name" translatable="false">Savik Academy</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Inspiration Study Circle</string>        <!--change app name here-->
 
     <string name="show">zeigen</string>
     <string name="not_assign">Nicht zugeordnet</string>
@@ -288,5 +288,7 @@ Wenn du abbrichst, wird dein Test automatisch abgeschickt.</string>
     <string name="NegMarks">Negative Markierung</string>
     <string name="negativemarkinstruct">1.Es wird keine negative Markierung geben</string>
     <string name="ThereWillBe">Es wird____geben</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 </resources>

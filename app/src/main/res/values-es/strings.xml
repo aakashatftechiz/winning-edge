@@ -285,6 +285,8 @@ Una vez que cancela, su prueba se envía automáticamente.</string>
     <string name="NegMarks">Marcado negativo</string>
     <string name="negativemarkinstruct">1. No habrá marcado negativo</string>
     <string name="ThereWillBe">Habrá</string>
+    <string name="daily_current_affairs">Daily Current Affairs</string>
+    <string name="monthly_current_affairs">Monthly Current Affairs</string>
 
 
 </resources>
