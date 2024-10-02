@@ -5,7 +5,7 @@
     android:layout_margin="2dp"
     android:gravity="center">
 
-    <com.ftechiz.isc.utils.widgets.CustomTextExtraBold
+    <com.ftechiz.savikeacademy.utils.widgets.CustomTextExtraBold
         android:id="@+id/tvQuestCount"
         android:layout_width="50dp"
         android:layout_height="50dp"

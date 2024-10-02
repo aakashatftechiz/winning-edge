@@ -16,7 +16,7 @@
 
     </LinearLayout>
 
-    <com.ftechiz.isc.utils.widgets.CustomSmallText
+    <com.ftechiz.savikeacademy.utils.widgets.CustomSmallText
         android:id="@+id/versionCode"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

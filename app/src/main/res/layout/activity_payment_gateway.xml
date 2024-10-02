@@ -39,7 +39,7 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <com.ftechiz.isc.utils.widgets.CustomTextBold
+            <com.ftechiz.savikeacademy.utils.widgets.CustomTextBold
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.ftechiz.isc.utils.widgets.CustomTextBold
+                <com.ftechiz.savikeacademy.utils.widgets.CustomTextBold
                     android:id="@+id/tvEnrollment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <com.ftechiz.isc.utils.widgets.CustomTextBold
+                <com.ftechiz.savikeacademy.utils.widgets.CustomTextBold
                     android:id="@+id/tvPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -109,7 +109,7 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <com.ftechiz.isc.utils.widgets.CustomeTextRegular
+                <com.ftechiz.savikeacademy.utils.widgets.CustomeTextRegular
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingEnd="@dimen/_5sdp"
@@ -123,7 +123,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <com.ftechiz.isc.utils.widgets.CustomSmallText
+        <com.ftechiz.savikeacademy.utils.widgets.CustomSmallText
             android:id="@+id/tvMove"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_38sdp"
@@ -142,7 +142,7 @@
             android:visibility="gone"
             android:orientation="vertical">
 
-            <com.ftechiz.isc.utils.widgets.CustomeTextRegular
+            <com.ftechiz.savikeacademy.utils.widgets.CustomeTextRegular
                 android:id="@+id/detailsAfterPaymentDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

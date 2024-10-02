@@ -42,7 +42,7 @@
         android:src="@drawable/noresults"
         android:visibility="gone" />
 
-    <com.ftechiz.isc.utils.widgets.CustomTextExtraBold
+    <com.ftechiz.savikeacademy.utils.widgets.CustomTextExtraBold
         android:id="@+id/tvEnable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
