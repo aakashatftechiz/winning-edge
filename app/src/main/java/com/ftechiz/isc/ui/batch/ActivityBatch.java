@@ -223,9 +223,7 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
         Dexter.withActivity((Activity) context)
                 .withPermissions(
                         Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
-                        ,Manifest.permission.BLUETOOTH
+                        Manifest.permission.BLUETOOTH
                     )
                 .withListener(new MultiplePermissionsListener() {
                     @Override

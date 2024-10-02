@@ -494,9 +494,7 @@ public class ActivityProfile extends BaseActivity {
 
         Dexter.withActivity((Activity) mContext)
                 .withPermissions(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                        Manifest.permission.CAMERA)
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {

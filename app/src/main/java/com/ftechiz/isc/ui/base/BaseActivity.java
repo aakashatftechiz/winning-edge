@@ -84,7 +84,7 @@ public class BaseActivity extends AppCompatActivity {
         navItems.add(mContext.getResources().getString(R.string.Download_Certificate));
         navItems.add(mContext.getResources().getString(R.string.Privacy_Policy));
         navItems.add(mContext.getResources().getString(R.string.About_App));
-        navItems.add(mContext.getResources().getString(R.string.Open_Source_Library));
+        //navItems.add(mContext.getResources().getString(R.string.Open_Source_Library));
         navItems.add(mContext.getResources().getString(R.string.Logout));
         navItems.add(mContext.getResources().getString(R.string.Delete_account));
 
