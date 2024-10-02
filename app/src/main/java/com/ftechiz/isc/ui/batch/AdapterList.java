@@ -102,7 +102,7 @@ public  class AdapterList extends RecyclerView.Adapter<AdapterList.MyViewHolder>
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
                         != PackageManager.PERMISSION_GRANTED) {
 
                     Toast.makeText(context, context.getResources().getString(R.string.Please_allow_permissions), Toast.LENGTH_SHORT).show();

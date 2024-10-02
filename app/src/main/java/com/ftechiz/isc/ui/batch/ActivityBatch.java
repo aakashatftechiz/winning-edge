@@ -85,7 +85,7 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
         if (!ProjectUtils.checkConnection(context)) {
             Toast.makeText(context, getResources().getString(R.string.NoInternetConnection), Toast.LENGTH_SHORT).show();
         }
-        if (ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(context, getResources().getString(R.string.Please_allow_permissions), Toast.LENGTH_SHORT).show();
             requestPermission();
@@ -223,9 +223,7 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
         Dexter.withActivity((Activity) context)
                 .withPermissions(
                         Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE
-                        ,Manifest.permission.BLUETOOTH
+                        Manifest.permission.BLUETOOTH
                     )
                 .withListener(new MultiplePermissionsListener() {
                     @Override
