@@ -101,11 +101,11 @@
     <string name="select_month_and_year"> Select Month And Year To Filter Results</string>
     <string name="ok">OK</string>
     <string name="select_now">Select Now</string>
-    <string name="Library">Library</string>
+    <string name="Library">Study Material</string>
     <string name="Book_and_current_affairs" translatable="false">Books and Current Affairs</string>
-    <string name="old_papers">Old Papers</string>
-    <string name="Notes">Notes</string>
-    <string name="Books">Books</string>
+    <string name="old_papers">Previous Years Papers</string>
+    <string name="Notes">Current Affairs</string>
+    <string name="Books">Study Material</string>
 
     <string name="orLoginWith">Or Login As</string>
     <string name="Please_login_to_continue">Please login to continue...</string>

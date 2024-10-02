@@ -95,9 +95,8 @@ public class ActivityCertificate extends BaseActivity {
 
         Dexter.withActivity(ActivityCertificate.this)
                 .withPermissions(
-                        Manifest.permission.CAMERA,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                        Manifest.permission.READ_PHONE_STATE,Manifest.permission.CAMERA)
+
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
