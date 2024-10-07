@@ -41,7 +41,7 @@
 
 
     </LinearLayout>
-    <com.ftechiz.isc.utils.widgets.CustomSmallText
+    <com.ftechiz.savikftech.utils.widgets.CustomSmallText
         android:layout_width="match_parent"
         android:id="@+id/subCatName"
         android:layout_height="wrap_content"

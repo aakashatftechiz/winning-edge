@@ -41,7 +41,7 @@
                  />
 
 
-                <com.ftechiz.isc.utils.widgets.CustomTextSemiBold
+                <com.ftechiz.savikftech.utils.widgets.CustomTextSemiBold
                     android:id="@+id/tvTittle"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

@@ -43,7 +43,7 @@
 
             android:src="@drawable/backbutton" />
 
-        <com.ftechiz.isc.utils.widgets.CustomeTextRegular
+        <com.ftechiz.savikftech.utils.widgets.CustomeTextRegular
             android:layout_width="match_parent"
             android:layout_height="@dimen/_70sdp"
             android:layout_centerHorizontal="true"

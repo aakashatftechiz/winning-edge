@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "91487062603",
-    "firebase_url": "https://eacademy-278405.firebaseio.com",
-    "project_id": "eacademy-278405",
-    "storage_bucket": "eacademy-278405.appspot.com"
+    "project_number": "163920843221",
+    "project_id": "savik-c020f",
+    "storage_bucket": "savik-c020f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:91487062603:android:68c59b1090ec6e26029bce",
+        "mobilesdk_app_id": "1:163920843221:android:01bc786d292fed304bad5c",
         "android_client_info": {
-          "package_name": "com.ftechiz.isc"
+          "package_name": "com.ftechiz.savikftech"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "91487062603-07g2k3b9jh0ls800dgvd1mh6321m4m0h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBMZutH7OZ8u91NaI3ER3JkR2hUPPW1CM"
+          "current_key": "AIzaSyDTDR8ARh4uti1ogepRHMzx96xS4O9_ZfY"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "91487062603-07g2k3b9jh0ls800dgvd1mh6321m4m0h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

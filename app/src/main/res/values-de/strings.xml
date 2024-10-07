@@ -2,7 +2,7 @@
 <resources>
 //germani
 
-    <string name="app_name" translatable="false">Inspiration Study Circle</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Savik Academy</string>        <!--change app name here-->
 
     <string name="show">zeigen</string>
     <string name="not_assign">Nicht zugeordnet</string>
