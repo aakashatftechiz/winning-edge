@@ -18,7 +18,7 @@
 
 
 
-    <com.ftechiz.savikftech.utils.widgets.CustomSmallText
+    <com.ftechiz.iscftechiz.utils.widgets.CustomSmallText
         android:id="@+id/batchName"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

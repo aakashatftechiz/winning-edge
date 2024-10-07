@@ -23,7 +23,7 @@
 
             android:autoMirrored="true"/>
 
-        <com.ftechiz.savikftech.utils.widgets.CustomTextExtraBold
+        <com.ftechiz.iscftechiz.utils.widgets.CustomTextExtraBold
             android:id="@+id/tvHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

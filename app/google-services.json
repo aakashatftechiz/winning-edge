@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "163920843221",
-    "project_id": "savik-c020f",
-    "storage_bucket": "savik-c020f.appspot.com"
+    "project_number": "221891420971",
+    "project_id": "inspiration-study",
+    "storage_bucket": "inspiration-study.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:163920843221:android:01bc786d292fed304bad5c",
+        "mobilesdk_app_id": "1:221891420971:android:c4598ab2c832faf1c8db6e",
         "android_client_info": {
-          "package_name": "com.ftechiz.savikftech"
+          "package_name": "com.ftechiz.iscftechiz"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDTDR8ARh4uti1ogepRHMzx96xS4O9_ZfY"
+          "current_key": "AIzaSyB3miall1WDsbYjtjzAyGOnug_TNtMVIQ4"
         }
       ],
       "services": {
