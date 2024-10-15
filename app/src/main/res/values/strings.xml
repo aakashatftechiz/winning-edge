@@ -1,7 +1,7 @@
 <resources>
 
 
-    <string name="app_name" translatable="false">Inspiration Study Circle</string>        <!--change app name here-->
+    <string name="app_name" translatable="false">Shri Ram Ias Academy</string>        <!--change app name here-->
 
     <string name="show">show</string>
     <string name="not_assign">Not assign yet</string>
