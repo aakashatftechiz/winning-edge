@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "221891420971",
-    "project_id": "inspiration-study",
-    "storage_bucket": "inspiration-study.appspot.com"
+    "project_number": "940402016011",
+    "project_id": "isc-edtech",
+    "storage_bucket": "isc-edtech.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:221891420971:android:c4598ab2c832faf1c8db6e",
+        "mobilesdk_app_id": "1:940402016011:android:2dc324d183b6ad98d36c0e",
         "android_client_info": {
-          "package_name": "com.ftechiz.iscftechiz"
+          "package_name": "com.ftechiz.iscftechizz"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB3miall1WDsbYjtjzAyGOnug_TNtMVIQ4"
+          "current_key": "AIzaSyDuS5Jrt5eHG4ve1rzpM1yTjUAt7L6wCA0"
         }
       ],
       "services": {
