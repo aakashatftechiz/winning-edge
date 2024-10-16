@@ -14,7 +14,7 @@
         >
 
 
-        <com.ftechiz.iscftechiz.utils.widgets.CustomeTextRegular
+        <com.ftechiz.iscftechizz.utils.widgets.CustomeTextRegular
             android:id="@+id/tvTeacherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         android:layout_marginStart="8dp"
         android:gravity="center">
 
-        <com.ftechiz.iscftechiz.utils.widgets.CustomeTextRegular
+        <com.ftechiz.iscftechizz.utils.widgets.CustomeTextRegular
             android:id="@+id/tvSubName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
         android:orientation="vertical">
 
 
-        <com.ftechiz.iscftechiz.utils.widgets.CustomeTextRegular
+        <com.ftechiz.iscftechizz.utils.widgets.CustomeTextRegular
             android:id="@+id/tvDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
             android:layout_marginTop="4dp"
             android:text=""
             android:textColor="@color/colorText" />
-        <com.ftechiz.iscftechiz.utils.widgets.CustomSmallText
+        <com.ftechiz.iscftechizz.utils.widgets.CustomSmallText
             android:layout_width="match_parent"
             android:text="@string/more"
             android:paddingStart="16dp"

@@ -18,7 +18,7 @@
         android:orientation="vertical">
 
 
-<com.ftechiz.iscftechiz.utils.widgets.CustomSmallText
+<com.ftechiz.iscftechizz.utils.widgets.CustomSmallText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="@color/colorPrimaryDark"

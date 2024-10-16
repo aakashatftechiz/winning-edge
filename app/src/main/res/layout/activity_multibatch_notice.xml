@@ -28,7 +28,7 @@
             app:tint="@color/white"
             />
 
-    <com.ftechiz.iscftechiz.utils.widgets.CustomTextExtraBold
+    <com.ftechiz.iscftechizz.utils.widgets.CustomTextExtraBold
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:textColor="@color/white" />
   </RelativeLayout>
 
-    <com.ftechiz.iscftechiz.utils.widgets.CustomSmallText
+    <com.ftechiz.iscftechizz.utils.widgets.CustomSmallText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/clearAll"
