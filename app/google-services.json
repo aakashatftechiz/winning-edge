@@ -1,37 +1,26 @@
 {
   "project_info": {
-    "project_number": "91487062603",
-    "firebase_url": "https://eacademy-278405.firebaseio.com",
-    "project_id": "eacademy-278405",
-    "storage_bucket": "eacademy-278405.appspot.com"
+    "project_number": "1018259099978",
+    "project_id": "winning-edge-231a6",
+    "storage_bucket": "winning-edge-231a6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:91487062603:android:68c59b1090ec6e26029bce",
+        "mobilesdk_app_id": "1:1018259099978:android:8ac1e0ce5d4794ec80b1b3",
         "android_client_info": {
-          "package_name": "com.ftechiz.theWinningEdge"
+          "package_name": "com.ftechiz.thewinningedgefteciz"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "91487062603-07g2k3b9jh0ls800dgvd1mh6321m4m0h.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCBMZutH7OZ8u91NaI3ER3JkR2hUPPW1CM"
+          "current_key": "AIzaSyC7AVy_TWMGqfOz5s-eYXR-wq_veo-htk4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "91487062603-07g2k3b9jh0ls800dgvd1mh6321m4m0h.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
