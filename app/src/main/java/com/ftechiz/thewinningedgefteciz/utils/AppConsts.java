@@ -16,7 +16,7 @@ public interface AppConsts {
 
     void setIdsOfAllSelectedQuestions(HashMap<String, String> hasIdsAns, HashMap<String, String> questionTimeHash);
 
-    String MAIN_URl = "https://admin.inspirationstudycircle.com/"; //  put your server base url here thanks..
+    String MAIN_URl = "https://admin.thewinningedge.co.in"; //  put your server base url here thanks..
     String BASE_URL = MAIN_URl + "/api/android/";
     String URL_PRIVACY_POLICY = MAIN_URl+"/privacyandpolicy";
     String STUDENT_DATA = "student_data";
