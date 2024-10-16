@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "940402016011",
-    "project_id": "isc-edtech",
-    "storage_bucket": "isc-edtech.appspot.com"
+    "project_number": "1018259099978",
+    "project_id": "winning-edge-231a6",
+    "storage_bucket": "winning-edge-231a6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:940402016011:android:2dc324d183b6ad98d36c0e",
+        "mobilesdk_app_id": "1:1018259099978:android:8ac1e0ce5d4794ec80b1b3",
         "android_client_info": {
-          "package_name": "com.ftechiz.iscftechizz"
+          "package_name": "com.ftechiz.thewinningedgefteciz"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDuS5Jrt5eHG4ve1rzpM1yTjUAt7L6wCA0"
+          "current_key": "AIzaSyC7AVy_TWMGqfOz5s-eYXR-wq_veo-htk4"
         }
       ],
       "services": {
