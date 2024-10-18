@@ -28,7 +28,7 @@
             app:tint="@color/white"
             />
 
-    <com.ftechiz.thewinningedgefteciz.utils.widgets.CustomTextExtraBold
+    <com.ftechiz.mashardhaftechiz.utils.widgets.CustomTextExtraBold
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
@@ -41,7 +41,7 @@
         android:textColor="@color/white" />
   </RelativeLayout>
 
-    <com.ftechiz.thewinningedgefteciz.utils.widgets.CustomSmallText
+    <com.ftechiz.mashardhaftechiz.utils.widgets.CustomSmallText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/clearAll"

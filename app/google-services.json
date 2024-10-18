@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1018259099978",
-    "project_id": "winning-edge-231a6",
-    "storage_bucket": "winning-edge-231a6.appspot.com"
+    "project_number": "660686900577",
+    "project_id": "masardhavidyaeducation",
+    "storage_bucket": "masardhavidyaeducation.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1018259099978:android:8ac1e0ce5d4794ec80b1b3",
+        "mobilesdk_app_id": "1:660686900577:android:ea67228b555d32df710920",
         "android_client_info": {
-          "package_name": "com.ftechiz.thewinningedgefteciz"
+          "package_name": "com.ftechiz.mashardhaftechiz"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyC7AVy_TWMGqfOz5s-eYXR-wq_veo-htk4"
+          "current_key": "AIzaSyANj9IFawZugJR2zW_AhfDOsYDuSv-39Vg"
         }
       ],
       "services": {

@@ -17,7 +17,7 @@
         android:layout_marginBottom="9dp"
         android:orientation="horizontal">
 
-        <com.ftechiz.thewinningedgefteciz.utils.widgets.CustomTextBold
+        <com.ftechiz.mashardhaftechiz.utils.widgets.CustomTextBold
             android:id="@+id/cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:paddingStart="9dp"
             android:paddingEnd="9dp" />
 
-        <com.ftechiz.thewinningedgefteciz.utils.widgets.CustomTextBold
+        <com.ftechiz.mashardhaftechiz.utils.widgets.CustomTextBold
             android:id="@+id/ttlAns"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

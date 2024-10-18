@@ -9,7 +9,7 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.ftechiz.thewinningedgefteciz"
+        applicationId "com.ftechiz.mashardhaftechiz"
         minSdk 23
         targetSdk 34
         versionCode 1
@@ -35,7 +35,7 @@ android {
         pickFirst 'lib/armeabi-v7a/libc++_shared.so'
         pickFirst 'lib/arm64-v8a/libc++_shared.so'
     }
-    namespace 'com.ftechiz.thewinningedgefteciz'
+    namespace 'com.ftechiz.mashardhaftechiz'
     rootProject.ext.ffmpegKitPackage = "video"
 }
 apply plugin: 'com.android.application'
