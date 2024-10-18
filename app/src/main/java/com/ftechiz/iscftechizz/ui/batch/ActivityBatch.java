@@ -56,7 +56,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLayout.OnRefreshListener{
+public class ActivityBatch extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
     RecyclerView recyclerView;
     Context context;
     static String checkLanguage = "";
@@ -69,9 +69,9 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
     boolean isLoading = false;
     AdapterCatPage adapterCat;
     int pageStart = 0, pageEnd = 4;
-    String searchTag="";
+    String searchTag = "";
     SwipeRefreshLayout swipeRefreshLayout;
-    boolean onRefreshCall=false;
+    boolean onRefreshCall = false;
 
 
     @Override
@@ -100,120 +100,120 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
 
         AndroidNetworking.post(AppConsts.BASE_URL + AppConsts.API_CHECKLANGUAGE)
                 .build().getAsString(new StringRequestListener() {
-            @Override
-            public void onResponse(String response) {
+                    @Override
+                    public void onResponse(String response) {
 
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    if ("true".equalsIgnoreCase(jsonObject.getString("status"))) {
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("arabic")) {
-                            //for rtl
-                            Configuration configuration = getResources().getConfiguration();
-                            configuration.setLayoutDirection(new Locale("fa"));
-                            getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
-                            String languageToLoad = "ar"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            if ("true".equalsIgnoreCase(jsonObject.getString("status"))) {
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("arabic")) {
+                                    //for rtl
+                                    Configuration configuration = getResources().getConfiguration();
+                                    configuration.setLayoutDirection(new Locale("fa"));
+                                    getResources().updateConfiguration(configuration, getResources().getDisplayMetrics());
+                                    String languageToLoad = "ar"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
 
-                            if (!checkLanguage.equals("ar")) {
-                                recreate();
+                                    if (!checkLanguage.equals("ar")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "ar";
+
+                                }
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("french")) {
+                                    String languageToLoad = "fr"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
+                                    if (!checkLanguage.equals("fr")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "fr";
+
+                                }
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("english")) {
+                                    String languageToLoad = "en"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
+                                    if (!checkLanguage.equals("en")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "en";
+
+
+                                }
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("hindi")) {
+                                    String languageToLoad = "hi"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
+                                    if (!checkLanguage.equals("hi")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "hi";
+
+
+                                }
+
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("german")) {
+                                    String languageToLoad = "de"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
+                                    if (!checkLanguage.equals("de")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "de";
+
+
+                                }
+
+                                if (jsonObject.getString("languageName").equalsIgnoreCase("spanish")) {
+                                    String languageToLoad = "es"; // your language
+                                    Locale locale = new Locale(languageToLoad);
+                                    Locale.setDefault(locale);
+                                    Configuration config = new Configuration();
+                                    config.locale = locale;
+                                    getBaseContext().getResources().updateConfiguration(config,
+                                            getBaseContext().getResources().getDisplayMetrics());
+                                    if (!checkLanguage.equals("es")) {
+                                        recreate();
+                                    }
+                                    checkLanguage = "es";
+
+
+                                }
                             }
-                            checkLanguage = "ar";
-
-                        }
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("french")) {
-                            String languageToLoad = "fr"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
-                            if (!checkLanguage.equals("fr")) {
-                                recreate();
-                            }
-                            checkLanguage = "fr";
-
-                        }
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("english")) {
-                            String languageToLoad = "en"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
-                            if (!checkLanguage.equals("en")) {
-                                recreate();
-                            }
-                            checkLanguage = "en";
-
-
-                        }
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("hindi")) {
-                            String languageToLoad = "hi"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
-                            if (!checkLanguage.equals("hi")) {
-                                recreate();
-                            }
-                            checkLanguage = "hi";
-
-
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
 
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("german")) {
-                            String languageToLoad = "de"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
-                            if (!checkLanguage.equals("de")) {
-                                recreate();
-                            }
-                            checkLanguage = "de";
-
-
-                        }
-
-                        if (jsonObject.getString("languageName").equalsIgnoreCase("spanish")) {
-                            String languageToLoad = "es"; // your language
-                            Locale locale = new Locale(languageToLoad);
-                            Locale.setDefault(locale);
-                            Configuration config = new Configuration();
-                            config.locale = locale;
-                            getBaseContext().getResources().updateConfiguration(config,
-                                    getBaseContext().getResources().getDisplayMetrics());
-                            if (!checkLanguage.equals("es")) {
-                                recreate();
-                            }
-                            checkLanguage = "es";
-
-
-                        }
                     }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
-            }
+                    @Override
+                    public void onError(ANError anError) {
 
-            @Override
-            public void onError(ANError anError) {
-
-            }
-        });
+                    }
+                });
 
 
     }
@@ -224,7 +224,7 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
                 .withPermissions(
                         Manifest.permission.CAMERA,
                         Manifest.permission.BLUETOOTH
-                    )
+                )
                 .withListener(new MultiplePermissionsListener() {
                     @Override
                     public void onPermissionsChecked(MultiplePermissionsReport report) {
@@ -251,9 +251,9 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
     }
 
     void getBatchDetails() {
-        if(!searchTag.isEmpty()){
-            pageStart=0;
-            pageEnd=1000;
+        if (!searchTag.isEmpty()) {
+            pageStart = 0;
+            pageEnd = 1000;
         }
 
 
@@ -263,57 +263,57 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
                 .addBodyParameter(AppConsts.LIMIT, "3")
                 .addBodyParameter(AppConsts.SEARCH, searchTag)
                 .build().getAsObject(ModelCatSubCat.class, new ParsedRequestListener<ModelCatSubCat>() {
-            @Override
-            public void onResponse(ModelCatSubCat response) {
+                    @Override
+                    public void onResponse(ModelCatSubCat response) {
 
-                onRefreshCall=false;
-                ProjectUtils.pauseProgressDialog();
-                swipeRefreshLayout.setRefreshing(false);
-                refreshTextView.setVisibility(View.GONE);
-                if (response.getStatus().equalsIgnoreCase("true")) {
-                    noResultIv.setVisibility(View.GONE);
+                        onRefreshCall = false;
+                        ProjectUtils.pauseProgressDialog();
+                        swipeRefreshLayout.setRefreshing(false);
+                        refreshTextView.setVisibility(View.GONE);
+                        if (response.getStatus().equalsIgnoreCase("true")) {
+                            noResultIv.setVisibility(View.GONE);
 
 
-                    if (pageStart == 0) {
-                        catSubList = response.batchData;
-                        if(catSubList.size() < 1){
+                            if (pageStart == 0) {
+                                catSubList = response.batchData;
+                                if (catSubList.size() < 1) {
+                                    noResultIv.setVisibility(View.VISIBLE);
+                                }
+                                initAdapter();
+                                initScrollListener();
+                            } else {
+                                if (searchTag.isEmpty()) {
+                                    if (response.batchData.size() < 1) {
+                                        Toast.makeText(context, context.getResources().getString(R.string.NoMoreCoursesfound), Toast.LENGTH_SHORT).show();
+                                    }
+                                    catSubList.addAll(response.batchData);
+                                    adapterCat.notifyDataSetChanged();
+                                    isLoading = false;
+                                } else {
+                                    catSubList = response.batchData;
+                                    initAdapter();
+                                    initScrollListener();
+                                }
+                            }
+
+                        } else {
+
+
                             noResultIv.setVisibility(View.VISIBLE);
                         }
-                        initAdapter();
-                        initScrollListener();
-                    } else {
-                        if(searchTag.isEmpty()){
-                        if(response.batchData.size() < 1){
-                            Toast.makeText(context, context.getResources().getString(R.string.NoMoreCoursesfound), Toast.LENGTH_SHORT).show();
-                        }
-                        catSubList.addAll(response.batchData);
-                        adapterCat.notifyDataSetChanged();
-                        isLoading = false;
-                        }else{
-                            catSubList = response.batchData;
-                            initAdapter();
-                            initScrollListener();
-                        }
+
+
                     }
 
-                } else {
+                    @Override
+                    public void onError(ANError anError) {
+                        onRefreshCall = false;
+                        ProjectUtils.pauseProgressDialog();
+                        refreshTextView.setVisibility(View.VISIBLE);
+                        Log.e("ON_ERROR", "onError: " + anError.getStackTrace());
 
-
-                    noResultIv.setVisibility(View.VISIBLE);
-                }
-
-
-            }
-
-            @Override
-            public void onError(ANError anError) {
-                onRefreshCall=false;
-                ProjectUtils.pauseProgressDialog();
-                refreshTextView.setVisibility(View.VISIBLE);
-
-
-            }
-        });
+                    }
+                });
 
 
     }
@@ -412,15 +412,14 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
     void init() {
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setColorSchemeColors(Color.RED, Color.BLUE, Color.GREEN);
-       // swipeRefreshLayout.setRefreshing(true);
-
+        // swipeRefreshLayout.setRefreshing(true);
 
 
         swipeRefreshLayout.setOnRefreshListener(this);
         recyclerView = findViewById(R.id.recyclerView);
-        if(pageStart == 0) {
-         ProjectUtils.showProgressDialog(context, false, getResources().getString(R.string.Loading___));
-            Log.v("saloni123","normal "+pageStart);
+        if (pageStart == 0) {
+            ProjectUtils.showProgressDialog(context, false, getResources().getString(R.string.Loading___));
+            Log.v("saloni123", "normal " + pageStart);
             getBatchDetails();
         }
 
@@ -436,14 +435,14 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
                 if (s.length() > 2) {
-                    searchTag =s.toString();
-                    catSubList=new ArrayList<>();
+                    searchTag = s.toString();
+                    catSubList = new ArrayList<>();
                     getBatchDetails();
                 }
-                if(s.length() <= 0){
-                    pageStart=0;
-                    pageEnd=4;
-                    searchTag="";
+                if (s.length() <= 0) {
+                    pageStart = 0;
+                    pageEnd = 4;
+                    searchTag = "";
                     isLoading = false;
                     getBatchDetails();
 
@@ -494,7 +493,7 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapterCat = new AdapterCatPage(catSubList, getApplicationContext(),"",checkLanguage);
+        adapterCat = new AdapterCatPage(catSubList, getApplicationContext(), "", checkLanguage);
         recyclerView.setAdapter(adapterCat);
 
     }
@@ -509,15 +508,18 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
+                Log.e("ON_SCROLLED", "onScrolled: " + isLoading);
+                LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
+                int totalItemCount = layoutManager.getItemCount();
+                int lastVisibleItem = layoutManager.findLastVisibleItemPosition();
+                Log.e("ON_SCROLLED", "onScrolled: " + totalItemCount + " subList size = "+ lastVisibleItem);
+                if (!isLoading && totalItemCount <= lastVisibleItem + 1) {
 
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-
-                if (!isLoading) {
-                    if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == catSubList.size() - 1) {
+                    // if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == catSubList.size() - 1) {
                         //bottom of list!
                         loadMore();
                         isLoading = true;
-                    }
+                   //  }
                 }
             }
         });
@@ -527,15 +529,16 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
 
     private void loadMore() {
         catSubList.add(null);
-       adapterCat.notifyItemInserted(catSubList.size() - 1);
+        adapterCat.notifyItemInserted(catSubList.size() - 1);
 
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(catSubList.size() > 0){
-                catSubList.remove(catSubList.size() - 1);}
+                if (catSubList.size() > 0) {
+                    catSubList.remove(catSubList.size() - 1);
+                }
                 int scrollPosition = catSubList.size();
                 adapterCat.notifyItemRemoved(scrollPosition);
                 int currentSize = scrollPosition;
@@ -569,16 +572,17 @@ public class ActivityBatch extends AppCompatActivity implements  SwipeRefreshLay
 
     @Override
     public void onRefresh() {
-Log.v("saloni123","refresh "+pageStart);
+        Log.v("saloni123", "refresh " + pageStart);
         swipeRefreshLayout.setRefreshing(true);
         if (ProjectUtils.checkConnection(context)) {
-            pageStart=0;
-            pageEnd=4;
-            searchTag="";
+            pageStart = 0;
+            pageEnd = 4;
+            searchTag = "";
 
-            if(!onRefreshCall){
-                onRefreshCall=true;
-            getBatchDetails();}
+            if (!onRefreshCall) {
+                onRefreshCall = true;
+                getBatchDetails();
+            }
         } else {
             Toast.makeText(context, getResources().getString(R.string.NoInternetConnection), Toast.LENGTH_SHORT).show();
         }
