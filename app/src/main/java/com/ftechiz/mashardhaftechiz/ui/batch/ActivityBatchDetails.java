@@ -42,7 +42,7 @@ import java.util.Date;
 public class ActivityBatchDetails extends AppCompatActivity implements View.OnClickListener {
     ImageView ivBack, ivBatch;
     Context context;
-    CustomTextExtraBold tvHeader, tvDiscriptionHeading,headFeature;
+    CustomTextExtraBold tvHeader, tvDiscriptionHeading, headFeature;
     static ModelCatSubCat.batchData.SubCategory.BatchData batchData;
     CustomTextBold tvOfferPrice;
     CustomSmallText startOn, endOn, readMore, timing;
@@ -107,10 +107,8 @@ public class ActivityBatchDetails extends AppCompatActivity implements View.OnCl
             subject.setText("" + batchData.getBatchSubject().get(l).getSubjectName() + " +");
             LinearLayout chapterLayout = new LinearLayout(context);
             chapterLayout.setPadding(0, 0, 0, 6);
-           // chapterLayout.setLayoutParams(new LinearLayout.LayoutParams((getWindowManager().getDefaultDisplay().getHeight()-300), ViewGroup.LayoutParams.FILL_PARENT));
+            // chapterLayout.setLayoutParams(new LinearLayout.LayoutParams((getWindowManager().getDefaultDisplay().getHeight()-300), ViewGroup.LayoutParams.FILL_PARENT));
             chapterLayout.setId(l);
-
-
 
 
             subject.setPadding(0, 0, 6, 1);
@@ -134,12 +132,12 @@ public class ActivityBatchDetails extends AppCompatActivity implements View.OnCl
             if (batchData.getBatchSubject().get(l).getChapter() != null) {
 
                 for (int chp = 0; chp < batchData.getBatchSubject().get(l).getChapter().size(); chp++) {
-                    LinearLayout linearLayoutChapter=new LinearLayout(context);
+                    LinearLayout linearLayoutChapter = new LinearLayout(context);
                     TextView chapter = new CustomTextExtraBold(context);
                     chapter.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
                     chapter.setTextSize(18f);
                     chapter.setTextColor(getResources().getColor(R.color.text_color_lyt));
-                    chapter.setLayoutParams(new ViewGroup.LayoutParams(  ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+                    chapter.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                     chapter.setSingleLine(true);
                     chapter.setMaxLines(1);
                     chapter.setEllipsize(TextUtils.TruncateAt.END);
@@ -149,13 +147,13 @@ public class ActivityBatchDetails extends AppCompatActivity implements View.OnCl
 
                     chapter.setId(chp);
 
-                    if(batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().size() > 0){
-                    chapter.setText( batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName() + "");
+                    if (batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().size() > 0) {
+                        chapter.setText(batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName() + "");
                         chapterdas.setText("+");
 
-                    }else{
+                    } else {
 
-                        chapter.setText( batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName() );
+                        chapter.setText(batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName());
 
                     }
                     linearLayoutChapter.addView(chapter);
@@ -171,11 +169,11 @@ public class ActivityBatchDetails extends AppCompatActivity implements View.OnCl
                         public void onClick(View v) {
                             if (videoLayout.getVisibility() == View.VISIBLE) {
                                 chapterdas.setText("+");
-                                chapter.setText(batchData.getBatchSubject().get(videoLayout.getId()).getChapter().get(chapter.getId()).getChapterName() );
+                                chapter.setText(batchData.getBatchSubject().get(videoLayout.getId()).getChapter().get(chapter.getId()).getChapterName());
                                 videoLayout.setVisibility(View.GONE);
                             } else {
                                 chapterdas.setText("-");
-                                chapter.setText(batchData.getBatchSubject().get(videoLayout.getId()).getChapter().get(chapter.getId()).getChapterName() );
+                                chapter.setText(batchData.getBatchSubject().get(videoLayout.getId()).getChapter().get(chapter.getId()).getChapterName());
                                 videoLayout.setVisibility(View.VISIBLE);
                             }
                         }
@@ -187,26 +185,21 @@ public class ActivityBatchDetails extends AppCompatActivity implements View.OnCl
                         LinearLayout videoMainLayout = new LinearLayout(context);
                         videoMainLayout.setOrientation(LinearLayout.VERTICAL);
                         LinearLayout relativeLayout = new LinearLayout(context);
-                        relativeLayout.setPadding(0,9,0,69);
+                        relativeLayout.setPadding(0, 9, 0, 69);
                         relativeLayout.setId(vl);
                         relativeLayout.setMinimumHeight(90);
-                        modelCounts.add(vl,new ModelCount(l, chp, l));
-                        int val=vl+1;
-
-
-
-
+                        modelCounts.add(vl, new ModelCount(l, chp, l));
+                        int val = vl + 1;
 
 
                         relativeLayout.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
-try{
-
+                                try {
                                     if (batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getPreviewType().equalsIgnoreCase("preview")) {
 
-                                        Log.v("TESTT","====  "+batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoType());
+                                        Log.v("TESTT", "====  " + batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoType());
                                         if (batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoType().equalsIgnoreCase("youtube")) {
                                             startActivity(new Intent(context, ActivityYoutubeVideo.class)
                                                     .putExtra("vId", "" + batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoId())
@@ -215,7 +208,7 @@ try{
                                                     .putExtra("WEB_URL", batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getUrl()));
                                         } else {
                                             if (batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoType().equalsIgnoreCase("video")) {
-                                                startActivity(new Intent(context, ExoplayerVideos.class).putExtra("WEB_URL", ""+ AppConsts.MAIN_URl+"/" + batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getUrl()));
+                                                startActivity(new Intent(context, ExoplayerVideos.class).putExtra("WEB_URL", "" + AppConsts.MAIN_URl + "/" + batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getUrl()));
                                             } else {
                                                 startActivity(new Intent(context, ActivityVimeoVideo.class)
                                                         .putExtra("vId", "" + batchData.getBatchSubject().get(modelCounts.get(relativeLayout.getId()).getVideoid()).getChapter().get(modelCounts.get(relativeLayout.getId()).getChapterid()).getVideoLectures().get(relativeLayout.getId()).getVideoId())
@@ -227,53 +220,49 @@ try{
 
                                     }
 
-                            }catch (Exception e){
-}
+                                } catch (Exception e) {
+                                }
                             }
                         });
 
 
-
-
-
-
-
                         LayoutInflater layoutInflater = (LayoutInflater)
                                 this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                        Log.v("TESTTT","============="+batchData.getBatchSubject().get(l).getChapter().get(chp)
-                                .getVideoLectures().get(vl).getTitle()+batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName());
-                        View v=layoutInflater.inflate(R.layout.feature_video, null);
-                        CustomSmallText featureText=v.findViewById(R.id.text);
-                        CustomSmallText videoDes=v.findViewById(R.id.videoDes);
-                        videoDes.setText(""+ batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().get(vl).getDescription()+" ");
-                        ImageView showhide=v.findViewById(R.id.showhide);
+                        Log.v("TESTTT", "=============" + batchData.getBatchSubject().get(l).getChapter().get(chp)
+                                .getVideoLectures().get(vl).getTitle() + batchData.getBatchSubject().get(l).getChapter().get(chp).getChapterName());
+                        View v = layoutInflater.inflate(R.layout.feature_video, null);
+                        CustomSmallText featureText = v.findViewById(R.id.text);
+                        CustomSmallText videoDes = v.findViewById(R.id.videoDes);
+                        videoDes.setText("" + batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().get(vl).getDescription() + " ");
+                        ImageView showhide = v.findViewById(R.id.showhide);
                         if (batchData.getVideoLectures()
                                 .get(vl).getPreviewType()
                                 .equalsIgnoreCase("preview")) {
                             showhide.setVisibility(View.VISIBLE);
-                        }else{
-                           showhide.setVisibility(View.GONE);
+                        } else {
+                            showhide.setVisibility(View.GONE);
                         }
-                        featureText.setText(""+""+ batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().get(vl).getTitle()+" ");
+                        featureText.setText("" + "" + batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().get(vl).getTitle() + " ");
                         relativeLayout.addView(v);
                         videoMainLayout.addView(relativeLayout);
 
 
-                      //  videoMainLayout.addView(videoDes);
-                       // videoMainLayout.addView(extraSpace);
+                        //  videoMainLayout.addView(videoDes);
+                        // videoMainLayout.addView(extraSpace);
 
                         videoLayout.addView(videoMainLayout);
 
 
                     }
-                    if(chp != 0){
-                    }else{
-                        if(batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().size() > 0){
-                        chapterdas.setText("-");}
+                    if (chp != 0) {
+                    } else {
+                        if (batchData.getBatchSubject().get(l).getChapter().get(chp).getVideoLectures().size() > 0) {
+                            chapterdas.setText("-");
+                        }
                     }
                     chapterLayout.addView(videoLayout);
                 }
-              //  chapterLayout.setVisibility(View.GONE);
+                //  chapterLayout.setVisibility(View.GONE);
                 showPreview.addView(chapterLayout);
             }
 
@@ -301,8 +290,9 @@ try{
                         TextView textView = new CustomTextExtraBold(context);
                         textView.setTextColor(getResources().getColor(R.color.text_color));
                         textView.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_START);
-                        if(i!=0){
-                        textView.setText("\n" + batchData.getBatchFecherd().get(i).getBatchSpecification());}else{
+                        if (i != 0) {
+                            textView.setText("\n" + batchData.getBatchFecherd().get(i).getBatchSpecification());
+                        } else {
                             textView.setText("" + batchData.getBatchFecherd().get(i).getBatchSpecification());
                         }
                         textView.setTextSize(19f);
@@ -361,7 +351,7 @@ try{
             tvOfferPrice.setVisibility(View.GONE);
 
         }
-        if(batchData.isPurchase_condition()){
+        if (batchData.isPurchase_condition()) {
             btBuyNow.setText(getResources().getString(R.string.AlreadyEnrolled));
         }
 
@@ -412,7 +402,7 @@ try{
                 onBackPressed();
                 break;
             case R.id.btBuyNow:
-                if(!batchData.isPurchase_condition()) {
+                if (!batchData.isPurchase_condition()) {
                     if (ProjectUtils.checkConnection(context)) {
 
                         if (getIntent().hasExtra("stuId")) {
@@ -429,23 +419,23 @@ try{
                     } else {
                         Toast.makeText(context, getResources().getString(R.string.NoInternetConnection), Toast.LENGTH_SHORT).show();
                     }
-                }else{
+                } else {
                     Toast.makeText(context, "Already Enrolled!", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.previewAvailable:
                 if (showPreview.getVisibility() == View.VISIBLE) {
                     showPreview.setVisibility(View.GONE);
-                    courseContent.setCompoundDrawablesWithIntrinsicBounds(null,null,context.getResources().getDrawable(com.github.clans.fab.R.drawable.fab_add),null);
+                    courseContent.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getResources().getDrawable(com.github.clans.fab.R.drawable.fab_add), null);
                     for (int l = 0; l < batchData.getBatchSubject().size(); l++) {
                         LinearLayout chapterLayout = new LinearLayout(context);
                         chapterLayout.getId();
-                     chapterLayout.setVisibility(View.GONE);
+                        chapterLayout.setVisibility(View.GONE);
                     }
                 } else {
                     showPreview.setVisibility(View.VISIBLE);
                     scroll.fullScroll(View.FOCUS_DOWN);
-                    courseContent.setCompoundDrawablesWithIntrinsicBounds(null,null,context.getResources().getDrawable(R.drawable.minus),null);
+                    courseContent.setCompoundDrawablesWithIntrinsicBounds(null, null, context.getResources().getDrawable(R.drawable.minus), null);
                 }
                 break;
 
