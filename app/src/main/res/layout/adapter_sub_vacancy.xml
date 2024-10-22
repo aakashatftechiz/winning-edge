@@ -16,7 +16,7 @@
         android:layout_marginStart="5dp"
         android:src="@drawable/vacancies" />
 
-    <com.ftechiz.mashardhaftechiz.utils.widgets.CustomTextBold
+    <com.ftechiz.iscftechizz.utils.widgets.CustomTextBold
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
