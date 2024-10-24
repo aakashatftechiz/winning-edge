@@ -72,7 +72,8 @@
             android:id="@+id/recyclerView"
             android:layout_marginTop="@dimen/_4sdp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" /></androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
     </LinearLayout>

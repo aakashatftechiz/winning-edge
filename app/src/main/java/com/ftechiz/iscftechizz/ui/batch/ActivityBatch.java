@@ -264,6 +264,7 @@ public class ActivityBatch extends AppCompatActivity implements SwipeRefreshLayo
                 .build().getAsObject(ModelCatSubCat.class, new ParsedRequestListener<ModelCatSubCat>() {
                     @Override
                     public void onResponse(ModelCatSubCat response) {
+                        Log.e("HomeBatchDetails", String.valueOf(response.batchData.size()));
 
                         onRefreshCall = false;
                         ProjectUtils.pauseProgressDialog();

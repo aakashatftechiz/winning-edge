@@ -53,6 +53,15 @@
             android:gravity="center"
             android:visibility="gone"
             android:text=""/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
+
 
 </LinearLayout>

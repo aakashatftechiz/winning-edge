@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -13,11 +14,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.error.ANError;
@@ -35,10 +36,10 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 
-public class ActivityMultiBatchHome extends BaseActivity {
-    RecyclerView  rlBatchRecomm;
+public class ActivityMultiBatchHome extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
+    RecyclerView rlBatchRecomm;
     Context context;
-    ImageView noResult,ivBack;
+    ImageView noResult, ivBack;
     EditText searchBarEditText;
     ModelLogin modelLogin;
     SharedPref sharedPref;
@@ -46,9 +47,10 @@ public class ActivityMultiBatchHome extends BaseActivity {
     AdapterCatPage adapterCat;
     boolean isLoading = false;
     int pageStart = 0, pageEnd = 4;
-    String searchTag="";
-    String checkLanguage="" ;
-
+    String searchTag = "";
+    String checkLanguage = "";
+    SwipeRefreshLayout swipeRefreshLayout;
+    boolean onRefreshCall = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class ActivityMultiBatchHome extends BaseActivity {
         if (!ProjectUtils.checkConnection(context)) {
             Toast.makeText(context, getResources().getString(R.string.NoInternetConnection), Toast.LENGTH_SHORT).show();
         }
-        if(modelLogin != null) {
+        if (modelLogin != null) {
             if (modelLogin.getStudentData() != null) {
                 if (modelLogin.getStudentData().getLanguageName().equalsIgnoreCase("arabic")) {
                     //manually set Directions
@@ -128,7 +130,7 @@ public class ActivityMultiBatchHome extends BaseActivity {
             }
         }
         setContentBaseView(R.layout.activity_multi_batch);
-        ivBack=findViewById(R.id.menuButton);
+        ivBack = findViewById(R.id.menuButton);
         ivBack.setImageDrawable(getResources().getDrawable(R.drawable.menu));
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,6 +143,7 @@ public class ActivityMultiBatchHome extends BaseActivity {
 
 
     }
+
     private void exitAppDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -183,15 +186,20 @@ public class ActivityMultiBatchHome extends BaseActivity {
 
 
     }
+
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+        // super.onBackPressed();
         exitAppDialog();
     }
 
     private void initial() {
         noResult = (ImageView) findViewById(R.id.noResult);
         searchBarEditText = findViewById(R.id.searchBarEditText);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
+        swipeRefreshLayout.setColorSchemeColors(Color.RED, Color.BLUE, Color.GREEN);
+
+        swipeRefreshLayout.setOnRefreshListener(this);
 
         searchBarEditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -202,16 +210,16 @@ public class ActivityMultiBatchHome extends BaseActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.length() > 2) {
-                    searchTag =s.toString();
-                    catSubList=new ArrayList<>();
+                    searchTag = s.toString();
+                    catSubList = new ArrayList<>();
 
                     getBatches();
                 }
-                if(s.length() <= 0){
-                    pageStart=0;
-                    pageEnd=4;
-                    searchTag="";
-                    isLoading=false;
+                if (s.length() <= 0) {
+                    pageStart = 0;
+                    pageEnd = 4;
+                    searchTag = "";
+                    isLoading = false;
                     getBatches();
 
                 }
@@ -230,9 +238,9 @@ public class ActivityMultiBatchHome extends BaseActivity {
     }
 
     void getBatches() {
-        if(!searchTag.isEmpty()){
-            pageStart=0;
-            pageEnd=100;
+        if (!searchTag.isEmpty()) {
+            pageStart = 0;
+            pageEnd = 100;
         }
 
         AndroidNetworking.post(AppConsts.BASE_URL + AppConsts.API_GET_BATCH_FEE)
@@ -243,55 +251,59 @@ public class ActivityMultiBatchHome extends BaseActivity {
                 .addBodyParameter(AppConsts.STUDENT_ID, "" + modelLogin.getStudentData().getStudentId())
                 .build(
                 ).getAsObject(ModelCatSubCat.class, new ParsedRequestListener<ModelCatSubCat>() {
-            @Override
-            public void onResponse(ModelCatSubCat response) {
+                    @Override
+                    public void onResponse(ModelCatSubCat response) {
 
-                if (response.getStatus().equalsIgnoreCase("true")) {
+                        onRefreshCall = false;
+                        swipeRefreshLayout.setRefreshing(false);
+
+                        if (response.getStatus().equalsIgnoreCase("true")) {
 
 
-                    if (pageStart == 0) {
-                        catSubList = response.getBatchData();
-                        initAdapter();
-                        initScrollListener();
-                        if(catSubList.size() < 1){
+                            if (pageStart == 0) {
+                                catSubList = response.getBatchData();
+                                initAdapter();
+                                initScrollListener();
+                                if (catSubList.size() < 1) {
+                                    noResult.setVisibility(View.VISIBLE);
+                                }
+                            } else {
+                                if (searchTag.isEmpty()) {
+                                    if (response.getBatchData().size() < 1) {
+                                        Toast.makeText(context, context.getResources().getString(R.string.NoMoreCoursesfound), Toast.LENGTH_SHORT).show();
+                                    }
+                                    catSubList.addAll(response.getBatchData());
+                                    adapterCat.notifyDataSetChanged();
+                                    isLoading = false;
+                                } else {
+                                    catSubList = response.getBatchData();
+                                    initAdapter();
+                                    initScrollListener();
+                                }
+                            }
+
+
+                        } else {
                             noResult.setVisibility(View.VISIBLE);
-                        }
-                    } else {
-                        if(searchTag.isEmpty()){
-                            catSubList.addAll(response.getBatchData());
-                            adapterCat.notifyDataSetChanged();
-                            isLoading = false;
-                        }else{
-                            catSubList = response.getBatchData();
-                            initAdapter();
-                            initScrollListener();
                         }
                     }
 
+                    @Override
+                    public void onError(ANError anError) {
+                        Toast.makeText(context, getResources().getString(R.string.Try_again), Toast.LENGTH_SHORT).show();
+                        ProjectUtils.pauseProgressDialog();
 
-                }else{
-                    noResult.setVisibility(View.VISIBLE);
-                }
-            }
-
-            @Override
-            public void onError(ANError anError) {
-                Toast.makeText(context, getResources().getString(R.string.Try_again), Toast.LENGTH_SHORT).show();
-                ProjectUtils.pauseProgressDialog();
-
-            }
-        });
+                    }
+                });
 
 
     }
-
-
 
     private void initAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
         rlBatchRecomm.setLayoutManager(linearLayoutManager);
 
-   adapterCat = new AdapterCatPage(catSubList,getApplicationContext(),""+modelLogin.getStudentData().getStudentId(),checkLanguage );
+        adapterCat = new AdapterCatPage(catSubList, getApplicationContext(), "" + modelLogin.getStudentData().getStudentId(), checkLanguage);
         rlBatchRecomm.setAdapter(adapterCat);
 
     }
@@ -299,27 +311,15 @@ public class ActivityMultiBatchHome extends BaseActivity {
     private void initScrollListener() {
         rlBatchRecomm.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-            }
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                LinearLayoutManager linearLayoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
-
-                if (!isLoading) {
-                    if (linearLayoutManager != null && linearLayoutManager.findLastCompletelyVisibleItemPosition() == catSubList.size() - 1) {
-                        //bottom of list!
-                        loadMore();
-                        isLoading = true;
-                    }
+                if (!isLoading && !recyclerView.canScrollVertically(1)) {
+                    //bottom of list!
+                    loadMore();
+                    isLoading = true;
                 }
             }
         });
-
-
     }
 
     private void loadMore() {
@@ -331,25 +331,32 @@ public class ActivityMultiBatchHome extends BaseActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                try {
+                if (catSubList.size() > 0) {
                     catSubList.remove(catSubList.size() - 1);
-                    int scrollPosition = catSubList.size();
-                    adapterCat.notifyItemRemoved(scrollPosition);
-                    int currentSize = scrollPosition;
-                    int nextLimit = currentSize + 3;
-                    pageStart = currentSize;
-                    pageEnd = nextLimit;
-                    getBatches();
-                    while (currentSize - 1 < nextLimit) {
-
-                        currentSize++;
-                    }
-                }catch(Exception e){
-
                 }
-
-
-
+                int scrollPosition = catSubList.size();
+                adapterCat.notifyItemRemoved(scrollPosition);
+                int currentSize = scrollPosition;
+                int nextLimit = pageEnd + 4;
+                pageStart = pageEnd;
+                pageEnd = nextLimit;
+                getBatches();
+                while (currentSize - 1 < nextLimit) {
+                    //
+                    currentSize++;
+                }
+              /*  catSubList.remove(catSubList.size() - 1);
+                int scrollPosition = catSubList.size();
+                adapterCat.notifyItemRemoved(scrollPosition);
+                int currentSize = scrollPosition;
+                int nextLimit = currentSize + 3;
+                pageStart = currentSize;
+                pageEnd = nextLimit;
+                getBatchDetails();
+                while (currentSize - 1 < nextLimit) {
+                    //
+                    currentSize++;
+                }*/
 
             }
         }, 2000);
@@ -358,6 +365,26 @@ public class ActivityMultiBatchHome extends BaseActivity {
     }
 
 
+    @Override
+    public void onRefresh() {
+        swipeRefreshLayout.setRefreshing(true);
+        if (ProjectUtils.checkConnection(context)) {
+            pageStart = 0;
+            pageEnd = 4;
+            searchTag = "";
 
+            if (!onRefreshCall) {
+                onRefreshCall = true;
+                getBatches();
+            }
+        } else {
+            Toast.makeText(context, getResources().getString(R.string.NoInternetConnection), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
+    }
 }
 
